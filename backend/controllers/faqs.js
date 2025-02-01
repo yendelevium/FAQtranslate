@@ -25,7 +25,7 @@ async function addFAQ (req,res){
     console.log(FAQdata)
     // Validation
     if (FAQdata.question == "" || FAQdata.answer==null){
-        res.json({
+        res.status(400).json({
             message:"Question/Answer cannot be empty"
         })
     }
@@ -37,7 +37,7 @@ async function addFAQ (req,res){
     const newFAQ = new FAQ(FAQdata);
     await newFAQ.save()
     redisHandler.clearCache()
-    res.json(newFAQ)
+    res.status(201).json(newFAQ)
 }
 
 async function deleteFAQ (req,res){

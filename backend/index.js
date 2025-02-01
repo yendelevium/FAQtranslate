@@ -29,7 +29,7 @@ if(process.env.NODE_ENV === "production"){
 
 // Error and 404 Handlers
 app.use((err,req,res,next)=>{
-    console.log(err)
+    // console.log(err)
     res.status(400).json({error:err})
 })
 
@@ -42,3 +42,5 @@ app.use("*",(req,res)=>{
 app.listen(process.env.PORT,()=>{
     console.log(`Listening on http://localhost:${process.env.PORT}`);
 })
+
+export default app
