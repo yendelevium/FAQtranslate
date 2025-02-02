@@ -9,6 +9,7 @@ An FAQ translator which dynamically translates FAQs to your desired language. It
 - MongoDB
 - Redis (Caching)
 - Jest and Supertest (Testing)
+- Docker
 ```
 
 
@@ -20,6 +21,7 @@ The following tools/technologies must be installed in your pc to ensure a smooth
 - node.js
 - mongoDB
 - redis
+- docker
 
 #### Installation steps
 1. Clone the repository
