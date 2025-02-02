@@ -36,7 +36,7 @@ cd FAQtranslate
 ```env
 API_KEY=your_api_key
 NODE_ENV=production
-REDIS_HOST=localhost
+REDIS_HOST=127.0.0.1
 REDIS_PORT=6379
 MONGO_URI="mongodb://localhost:27017/dbname"
 PORT=8080
@@ -58,7 +58,7 @@ You can either type the URL in you preferred web-browser, or `Ctrl` + `Click` th
 ## Docker Support
 This project includes **Docker** and **Docker Compose** support for containerization.
 1. Change your `.env` file to conform to docker images of mongoDB and redis
-```docker
+```http
 API_KEY=your_api_key
 NODE_ENV=production
 REDIS_HOST=redis <=HERE
@@ -68,7 +68,7 @@ PORT=8080
 ```
 
 2. Run `docker compose` command
-```
+```bash
 docker-compose up -d --build 
 ```
 The project is now running on `http://localhost:PORT`

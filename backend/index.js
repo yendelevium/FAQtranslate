@@ -4,14 +4,14 @@ import mongoose from "mongoose";
 import FAQRouter from "./routes/faqs.js";
 import path from "path"
 
+// Loading .env file
+dotenv.config();
 
 // DB connection
 mongoose.connect(process.env.MONGO_URI)
     .then(()=>console.log("Connection Successfull"))
     .catch(err => console.log("Failed to connect to mongoDB", err))
 
-// Loading .env file
-dotenv.config();
 const app=express();
 
 app.use(express.json());
