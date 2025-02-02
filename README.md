@@ -58,7 +58,7 @@ You can either type the URL in you preferred web-browser, or `Ctrl` + `Click` th
 ## Docker Support
 This project includes **Docker** and **Docker Compose** support for containerization.
 1. Change your `.env` file to conform to docker images of mongoDB and redis
-```http
+```env
 API_KEY=your_api_key
 NODE_ENV=production
 REDIS_HOST=redis <=HERE
