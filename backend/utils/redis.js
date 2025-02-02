@@ -1,5 +1,10 @@
 import { createClient } from "redis";
-const redisClient = createClient();
+const redisClient = createClient({
+    socket: {
+    host: process.env.REDIS_HOST || "redis", // Use "redis" instead of "localhost"
+    port: process.env.REDIS_PORT || 6379,
+  },
+});
 await redisClient.connect();
 
 async function getOrSetCache(key, callback) {

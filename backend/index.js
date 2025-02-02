@@ -6,7 +6,7 @@ import path from "path"
 
 
 // DB connection
-mongoose.connect('mongodb://127.0.0.1:27017/FAQtranslate')
+mongoose.connect(process.env.MONGO_URI)
     .then(()=>console.log("Connection Successfull"))
     .catch(err => console.log("Failed to connect to mongoDB", err))
 
@@ -39,7 +39,7 @@ app.use("*",(req,res)=>{
     })
 })
 
-app.listen(process.env.PORT,()=>{
+app.listen(process.env.PORT,"0.0.0.0",()=>{
     console.log(`Listening on http://localhost:${process.env.PORT}`);
 })
 

@@ -34,7 +34,11 @@ cd FAQtranslate
 
 3. Create a `.env` file at the root of the project, and add the folllowing variables
 ```env
-API_KEY=your_google_translat_api_key
+API_KEY=your_api_key
+NODE_ENV=production
+REDIS_HOST=localhost
+REDIS_PORT=6379
+MONGO_URI="mongodb://localhost:27017/dbname"
 PORT=8080
 ```
 
@@ -51,6 +55,25 @@ npm run start
 The project is now running on `http://localhost:PORT`
 You can either type the URL in you preferred web-browser, or `Ctrl` + `Click` the URL in the terminal after running this instruction
 
+## Docker Support
+This project includes **Docker** and **Docker Compose** support for containerization.
+1. Change your `.env` file to conform to docker images of mongoDB and redis
+```docker
+API_KEY=your_api_key
+NODE_ENV=production
+REDIS_HOST=redis <=HERE
+REDIS_PORT=6379
+MONGO_URI="mongodb://mongodb:27017/FAQtranslate" <=HERE
+PORT=8080
+```
+
+2. Run `docker compose` command
+```
+docker-compose up -d --build 
+```
+The project is now running on `http://localhost:PORT`
+You can either type the URL in you preferred web-browser, or `Ctrl` + `Click` the URL in the terminal after running this instruction
+
 ## Running Tests
 
 To run tests, run the following command
@@ -58,8 +81,6 @@ To run tests, run the following command
 ```bash
   npm run test
 ```
-
-
 
 ## API Reference
 
